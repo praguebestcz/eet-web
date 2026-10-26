@@ -1,4 +1,4 @@
-// Stránka EET 2.0 pro e-shopy: https://eet.praguebest.cz/
+// Stránka EET 2.0 pro e-shopy: https://eet.pbst.app/
 // Veřejný podklad pro klienty. Fakta ověřená 26. 10. 2026 v zákoně č. 180/2026 Sb., důvodové zprávě (tisk 189)
 // a materiálech Finanční správy (eet.gov.cz, Popis položek datové zprávy v1.0, Příručka EET 2.0).
 const { kde, tok } = require('./diagramy');

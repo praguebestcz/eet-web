@@ -1,6 +1,6 @@
 # EET 2.0 od 1. 1. 2027 - informační stránka pro klienty
 
-Stránka PragueBest pro klienty: co se s evidencí tržeb mění pro e‑shopy, které platby se evidují a které ne, co pokladna posílá Finanční správě a jak se připravit. Živě na https://eet.praguebest.cz (do napojení domény na adrese Vercelu).
+Stránka PragueBest pro klienty: co se s evidencí tržeb mění pro e‑shopy, které platby se evidují a které ne, co pokladna posílá Finanční správě a jak se připravit. Živě na https://eet.pbst.app.
 
 Stejná kostra jako https://eaa.praguebest.cz a https://oznacovani-ai-obsahu.praguebest.cz.
 
