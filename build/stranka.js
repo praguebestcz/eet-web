@@ -2,6 +2,7 @@
 // Veřejný podklad pro klienty. Fakta ověřená 26. 10. 2026 v zákoně č. 180/2026 Sb., důvodové zprávě (tisk 189)
 // a materiálech Finanční správy (eet.gov.cz, Popis položek datové zprávy v1.0, Příručka EET 2.0).
 const { kde, tok } = require('./diagramy');
+const { kviz, KVIZ_CSS, KVIZ_JS } = require('./kviz');
 
 const VERZE = '1.0';
 const DATUM = '26.&nbsp;10.&nbsp;2026';
@@ -14,7 +15,8 @@ const sticky = [
   { href: '#dozor', label: 'Co se stane při nesplnění', n: '05' },
   { href: '#postup', label: 'Jak se připravit', n: '06' },
   { href: '#pomoc', label: 'S čím pomůžeme', n: '07' },
-  { href: '#kontakt', label: 'Kontakt', n: '08' },
+  { href: '#test', label: 'Týká se vás to?', n: '08' },
+  { href: '#kontakt', label: 'Kontakt', n: '09' },
 ];
 
 const extraCss = `
@@ -47,7 +49,7 @@ const body = `
   <div class="doc-actions" data-review-id="doc-actions">
     <button type="button" class="da" id="da-pdf" data-review-id="da-pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2"/></svg><span>Uložit jako PDF</span></button>
     <button type="button" class="da" id="da-share" data-review-id="da-share"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 007 0l3-3a5 5 0 00-7-7l-1.5 1.5"/><path d="M14 11a5 5 0 00-7 0l-3 3a5 5 0 007 7l1.5-1.5"/></svg><span>Sdílet odkaz</span></button>
-    <a class="da primary" href="#kontakt" data-review-id="da-kontakt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg><span>Zjistit, zda se&nbsp;vás EET týká</span></a>
+    <a class="da primary" href="#test" data-review-id="da-test"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg><span>Zjistit, zda se&nbsp;vás EET týká</span></a>
   </div>
 </header>
 
@@ -77,7 +79,8 @@ const body = `
     <li><a href="#dozor"><span class="num">05</span>Co se&nbsp;stane při nesplnění</a><span class="d">Pokuta až&nbsp;500&nbsp;000&nbsp;Kč, bez&nbsp;uzavření provozovny.</span></li>
     <li><a href="#postup"><span class="num">06</span>Jak se&nbsp;připravit</a><span class="d">Pět kroků do&nbsp;1.&nbsp;1.&nbsp;2027.</span></li>
     <li><a href="#pomoc"><span class="num">07</span>S&nbsp;čím pomůžeme</a><span class="d">Posouzení platebních míst a&nbsp;nastavení e-shopu.</span></li>
-    <li><a href="#kontakt"><span class="num">08</span>Kontakt</a><span class="d">Projektový manažer nebo produktaci@praguebest.cz.</span></li>
+    <li><a href="#test"><span class="num">08</span>Týká se vás to?</a><span class="d">Čtyři otázky a&nbsp;hned víte.</span></li>
+    <li><a href="#kontakt"><span class="num">09</span>Kontakt</a><span class="d">Projektový manažer nebo produktaci@praguebest.cz.</span></li>
   </ul>
 </nav>
 
@@ -114,13 +117,10 @@ const body = `
 <summary>Jak se&nbsp;nový zákon liší od&nbsp;EET&nbsp;1.0 z&nbsp;roku 2016</summary>
 <div>
 <ul class="dots">
-  <li><strong>Platby kartou zůstaly.</strong> Senát chtěl bezhotovostní platby z&nbsp;evidence vyjmout, Sněmovna 9.&nbsp;9.&nbsp;2026 setrvala na&nbsp;původním znění.</li>
   <li><strong>Méně údajů.</strong> Neposílají se&nbsp;položky, DPH ani způsob platby. Potvrzovací kód FIK nahrazuje POK, kódy BKP a&nbsp;PKP odpadají.</li>
   <li><strong>Bez&nbsp;informačního oznámení.</strong> Cedule o&nbsp;evidenci tržeb na&nbsp;provozovně odpadá.</li>
   <li><strong>Jeden online režim.</strong> Zjednodušený a&nbsp;zvláštní režim s&nbsp;papírovými účtenkami z&nbsp;bloku neexistují.</li>
-  <li><strong>Bez&nbsp;uzavření provozovny.</strong> Zákon zná jen pokuty.</li>
   <li><strong>Nové rozhraní.</strong> Verze 4.1 není kompatibilní s&nbsp;původní verzí 3.1.</li>
-  <li><strong>Nově EET OFF a&nbsp;sleva na&nbsp;dani</strong> (podrobnosti v&nbsp;sekci 04).</li>
 </ul>
 </div>
 </details>
@@ -134,7 +134,7 @@ const body = `
   ${kde}
   <div class="callout" data-review-id="callout-jednotky">
     <span class="label">Evidenční jednotky</span>
-    <p>Základní jednotkou evidence je evidenční jednotka: prodejna, výdejní místo, internetová stránka nebo dopravní prostředek. E-shop, který má prodejnu nebo výdejní místo s&nbsp;platbou na&nbsp;místě, musí v&nbsp;DIS+ oznámit <strong>všechny své jednotky, tedy i&nbsp;web</strong>. Tržby z&nbsp;webu se&nbsp;přesto neevidují.</p>
+    <p>Základní jednotkou evidence je evidenční jednotka: prodejna, výdejní místo, internetová stránka nebo dopravní prostředek. E-shop, který má prodejnu nebo výdejní místo s&nbsp;platbou na&nbsp;místě, musí v&nbsp;DIS+ oznámit <strong>všechny své jednotky, tedy i&nbsp;web</strong>, změny do&nbsp;15&nbsp;dnů. Tržby z&nbsp;webu se&nbsp;přesto neevidují.</p>
   </div>
 </section>
 
@@ -214,7 +214,6 @@ const body = `
   <ul class="dots">
     <li><strong>Certifikát</strong> vydává zdarma certifikační autorita Finanční správy přes DIS+ na&nbsp;portálu MOJE daně, od&nbsp;1.&nbsp;11.&nbsp;2026. Platí jeden rok, jeden certifikát lze použít pro&nbsp;více pokladen. Certifikáty z&nbsp;EET&nbsp;1.0 nelze použít.</li>
     <li><strong>Pokladní zařízení</strong> je jakékoli zařízení s&nbsp;připojením k&nbsp;internetu. Zákon nevyžaduje certifikovaný hardware ani software. Pokladna z&nbsp;EET&nbsp;1.0 funguje po&nbsp;aktualizaci softwaru na&nbsp;rozhraní verze&nbsp;4.1.</li>
-    <li><strong>Evidenční jednotky</strong> oznamujete v&nbsp;DIS+ před prvním vygenerováním certifikátu, změny do&nbsp;15&nbsp;dnů. U&nbsp;e-shopu s&nbsp;prodejnou patří do&nbsp;oznámení i&nbsp;web.</li>
     <li><strong>Účtenku</strong> s&nbsp;kódem tisknout nemusíte. Doklad zákazníkovi vydáváte jen tam, kde to ukládá jiný předpis, například zákon o&nbsp;DPH.</li>
   </ul>
 
@@ -226,7 +225,6 @@ const body = `
   <li><strong>MOJE eet.</strong> Bezplatná webová pokladna Finanční správy od&nbsp;1.&nbsp;12.&nbsp;2026 pro&nbsp;podnikatele s&nbsp;nejvýše dvěma evidenčními jednotkami. Certifikát si zajistí sama.</li>
   <li><strong>EET OFF.</strong> Fyzická osoba v&nbsp;prvním pásmu paušální daně s&nbsp;příjmy do&nbsp;1&nbsp;000&nbsp;000&nbsp;Kč se&nbsp;může evidence zprostit přirážkou 1&nbsp;400&nbsp;Kč měsíčně. Oznámení pro&nbsp;rok 2027 se&nbsp;podává do&nbsp;10.&nbsp;1.&nbsp;2027 (den připadá na&nbsp;neděli, lhůta končí v&nbsp;pondělí 11.&nbsp;1.). Právnické osoby tuto možnost nemají.</li>
   <li><strong>Sleva na&nbsp;dani.</strong> Fyzická osoba si v&nbsp;prvním roce, kdy zaeviduje povinnou tržbu, odečte z&nbsp;daně až&nbsp;5&nbsp;000&nbsp;Kč. Platí i&nbsp;pro&nbsp;ty, kdo evidovali v&nbsp;EET&nbsp;1.0.</li>
-  <li><strong>Testování.</strong> Zkušební prostředí Playground běží od&nbsp;1.&nbsp;7.&nbsp;2026, produkční rozhraní v&nbsp;ověřovacím režimu od&nbsp;1.&nbsp;11.&nbsp;2026. Dodavatel pokladny v&nbsp;něm ověří napojení před ostrým startem.</li>
 </ul>
 </div>
 </details>
@@ -253,10 +251,6 @@ const body = `
     <li><b>Nastavte e-shop</b>Platební metody u&nbsp;osobního odběru a&nbsp;výdejních míst, dobírku vlastním rozvozem, poukazy a&nbsp;kredit, proces vratek. Ať je jasné, které platby končí v&nbsp;pokladně a&nbsp;které v&nbsp;platební bráně.</li>
     <li><b>Vyzkoušejte a&nbsp;spusťte</b>Od&nbsp;1.&nbsp;11.&nbsp;2026 běží produkční rozhraní v&nbsp;ověřovacím režimu. Od&nbsp;1.&nbsp;1.&nbsp;2027 běží evidence naostro.</li>
   </ol>
-  <div class="callout" data-review-id="callout-proc-ted">
-    <span class="label">Proč začít v&nbsp;listopadu</span>
-    <p>Dodavatelé pokladen vydávají aktualizace průběžně a&nbsp;v&nbsp;prosinci bude o&nbsp;jejich podporu největší zájem. Kdo má hotovo v&nbsp;listopadu, má prosinec na&nbsp;předvánoční sezónu.</p>
-  </div>
 </section>
 
 <section id="pomoc" data-review-id="section-pomoc">
@@ -273,8 +267,23 @@ const body = `
   </div>
 </section>
 
+${kviz({
+  n: '08', nadpis: 'Týká se vás to?', akcent: 'Čtyři otázky.',
+  lead: 'Odpovězte Ano nebo Ne. Výsledek se nikam neposílá ani neukládá.',
+  otazky: [
+    { q: 'Může zákazník zaplatit až při osobním převzetí na prodejně nebo výdejním místě e-shopu?', ano: 2 },
+    { q: 'Přijímáte na místě hotovost, kartu přes terminál nebo QR platbu?', ano: 1 },
+    { q: 'Rozvážíte zboží vlastními kurýry a vybíráte platbu při doručení?', ano: 3 },
+    { q: 'Prodáváte jen online s platbou předem?', ano: -9 },
+  ],
+  vysledky: [
+    { min: 3, nadpis: 'Evidovat musíte.', text: 'Platba při převzetí nebo při doručení vlastním kurýrem je kontaktní platba. Ověřte u dodavatele pokladny, že bude k 1. 1. 2027 připravená, a od 1. 11. 2026 vyřiďte certifikát v DIS+.', odkaz: '#postup', odkazText: 'Jak se připravit' },
+    { min: 1, nadpis: 'Pravděpodobně evidovat musíte.', text: 'Jakmile zákazník platí na místě, jde o evidovanou tržbu. Projděte si v tabulce situací, které platby na místě přijímáte.', odkaz: '#priklady', odkazText: 'Tabulka situací' },
+    { min: 0, nadpis: 'Evidovat nemusíte.', text: 'Platby na dálku přes e-shop evidenci nepodléhají. Pokud později otevřete výdejní místo nebo začnete rozvážet vlastními kurýry, vraťte se k sekci 02.', odkaz: '#co-se-eviduje', odkazText: 'Co se eviduje' },
+  ],
+})}
 <section id="kontakt" data-review-id="section-kontakt">
-  <span class="section-label">08 - Kontakt</span>
+  <span class="section-label">09 - Kontakt</span>
   <div class="keybox" data-review-id="cta">
     <span class="label">Další krok</span>
     <p><strong>Nevíte, zda se&nbsp;vás nová evidence týká?</strong> Ozvěte se&nbsp;svému projektovému manažerovi v&nbsp;PragueBest, nebo napište na&nbsp;<a href="mailto:produktaci@praguebest.cz?subject=EET%202.0">produktaci@praguebest.cz</a> s&nbsp;předmětem „EET&nbsp;2.0“. Projdeme s&nbsp;vámi současné řešení a&nbsp;pomůžeme najít vhodný způsob evidence.</p>
@@ -297,5 +306,6 @@ module.exports = {
   stickyTitle: 'EET 2.0 pro e-shopy',
   sticky,
   body,
-  extraCss,
+  extraCss: extraCss + KVIZ_CSS,
+  extraScript: KVIZ_JS,
 };
