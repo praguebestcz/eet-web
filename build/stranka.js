@@ -279,7 +279,7 @@ ${kviz({
   vysledky: [
     { min: 3, nadpis: 'Evidovat musíte.', text: 'Platba při převzetí nebo při doručení vlastním kurýrem je kontaktní platba. Ověřte u dodavatele pokladny, že bude k 1. 1. 2027 připravená, a od 1. 11. 2026 vyřiďte certifikát v DIS+.', odkaz: '#postup', odkazText: 'Jak se připravit' },
     { min: 1, nadpis: 'Pravděpodobně evidovat musíte.', text: 'Jakmile zákazník platí na místě, jde o evidovanou tržbu. Projděte si v tabulce situací, které platby na místě přijímáte.', odkaz: '#priklady', odkazText: 'Tabulka situací' },
-    { min: 0, nadpis: 'Evidovat nemusíte.', text: 'Platby na dálku přes e-shop evidenci nepodléhají. Pokud později otevřete výdejní místo nebo začnete rozvážet vlastními kurýry, vraťte se k sekci 02.', odkaz: '#co-se-eviduje', odkazText: 'Co se eviduje' },
+    { min: 0, nejiste: true, nadpis: 'Evidovat nemusíte.', text: 'Platby na dálku přes e-shop evidenci nepodléhají. Pokud později otevřete výdejní místo nebo začnete rozvážet vlastními kurýry, vraťte se k sekci 02.', odkaz: '#co-se-eviduje', odkazText: 'Co se eviduje' },
   ],
 })}
 <section id="kontakt" data-review-id="section-kontakt">

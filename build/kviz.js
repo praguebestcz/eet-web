@@ -1,13 +1,14 @@
 // Rychlý test „Týká se vás to?“ - otázky Ano/Ne s bodováním a výsledkem. Bez knihoven, nic se neodesílá ani neukládá.
 // Vzor: test v novinkách pro web PB a konfigurátor „Jak vybrat e-shopovou platformu“.
-// kviz({ n, label, nadpis, akcent, lead, otazky: [{ q, ano, ne }], vysledky: [{ min, nadpis, text, odkaz, odkazText }] })
+// kviz({ n, label, nadpis, akcent, lead, otazky: [{ q, ano, ne }], vysledky: [{ min, nadpis, text, odkaz, odkazText, nejiste }] })
+// nejiste: true = povinnost se netýká, výzva je jen „Nejste si jistí? Ozvěte se nám“.
 // Výsledek = položka s nejvyšším `min`, které je menší nebo rovno součtu bodů (záporný součet se bere jako 0).
 
 function kviz(o) {
   const otazky = o.otazky.map((q, i) => `
       <li class="kv-q" data-ano="${q.ano || 0}" data-ne="${q.ne || 0}"><span class="kv-n">${i + 1}</span><span class="kv-t">${q.q}</span><span class="kv-btns"><button type="button" class="kv-btn" data-v="ano">Ano</button><button type="button" class="kv-btn" data-v="ne">Ne</button></span></li>`).join('');
   const vysledky = o.vysledky.map((v) => `
-      <div class="kv-vysledek" data-min="${v.min}" hidden><b>${v.nadpis}</b><p>${v.text}</p><p><a class="btn" href="#kontakt">Ozvěte se nám</a>${v.odkaz ? ` <a class="btn sec" href="${v.odkaz}">${v.odkazText || 'Podrobnosti'}</a>` : ''}</p></div>`).join('');
+      <div class="kv-vysledek" data-min="${v.min}" hidden><b>${v.nadpis}</b><p>${v.text}</p><p>${v.nejiste ? '<a class="btn sec" href="#kontakt">Nejste si jistí? Ozvěte se nám</a>' : '<a class="btn" href="#kontakt">Ozvěte se nám</a>'}${v.odkaz ? ` <a class="btn sec" href="${v.odkaz}">${v.odkazText || 'Podrobnosti'}</a>` : ''}</p></div>`).join('');
   return `
 <section id="test" data-review-id="section-test">
   <span class="section-label">${o.n} - Test</span>
