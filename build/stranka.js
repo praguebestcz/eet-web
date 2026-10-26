@@ -114,8 +114,8 @@ const body = `
 <summary>Jak se&nbsp;nový zákon liší od&nbsp;EET&nbsp;1.0 z&nbsp;roku 2016</summary>
 <div>
 <ul class="dots">
-  <li><strong>Jiné kritérium.</strong> Senát chtěl bezhotovostní platby vyjmout, Sněmovna 9.&nbsp;9.&nbsp;2026 setrvala na&nbsp;původním znění.</li>
-  <li><strong>Méně údajů.</strong> Neposílají se&nbsp;položky, DPH ani způsob platby. Kódy FIK, BKP a&nbsp;PKP nahrazuje jediný potvrzovací kód POK.</li>
+  <li><strong>Platby kartou zůstaly.</strong> Senát chtěl bezhotovostní platby z&nbsp;evidence vyjmout, Sněmovna 9.&nbsp;9.&nbsp;2026 setrvala na&nbsp;původním znění.</li>
+  <li><strong>Méně údajů.</strong> Neposílají se&nbsp;položky, DPH ani způsob platby. Potvrzovací kód FIK nahrazuje POK, kódy BKP a&nbsp;PKP odpadají.</li>
   <li><strong>Bez&nbsp;informačního oznámení.</strong> Cedule o&nbsp;evidenci tržeb na&nbsp;provozovně odpadá.</li>
   <li><strong>Jeden online režim.</strong> Zjednodušený a&nbsp;zvláštní režim s&nbsp;papírovými účtenkami z&nbsp;bloku neexistují.</li>
   <li><strong>Bez&nbsp;uzavření provozovny.</strong> Zákon zná jen pokuty.</li>
@@ -130,11 +130,11 @@ const body = `
   <span class="section-label">02 - Rozsah</span>
   <h2>Co se&nbsp;eviduje <span class="accent">a&nbsp;co ne</span></h2>
   <p class="lead">Evidovaná tržba musí splnit tři podmínky zároveň: je to <strong>kontaktní platba</strong>, je to <strong>příjem z&nbsp;podnikání</strong> a&nbsp;nevztahuje se&nbsp;na&nbsp;ni výjimka. Stačí, aby jedna podmínka chyběla, a&nbsp;platba se&nbsp;neeviduje.</p>
-  <p>Kontaktní platba je podle §&nbsp;6 platba při <strong>osobním kontaktu</strong> s&nbsp;podnikatelem nebo jeho personálem, nebo platba <strong>v&nbsp;provozovně či&nbsp;dopravním prostředku</strong> podnikatele v&nbsp;souvislosti s&nbsp;prodejem. Hotovost, šeky, poukázky a&nbsp;stravenky se&nbsp;evidují vždy, i&nbsp;bez&nbsp;osobního kontaktu. Jedinou výjimkou je dobírka: hotovost vybere poštovní dopravce a&nbsp;e-shopu ji pošle převodem.</p>
+  <p>Kontaktní platba je podle §&nbsp;6 platba při <strong>osobním kontaktu</strong> s&nbsp;podnikatelem nebo jeho personálem, nebo platba <strong>v&nbsp;provozovně či&nbsp;dopravním prostředku</strong> podnikatele v&nbsp;souvislosti s&nbsp;prodejem. Hotovost, šeky a&nbsp;papírové poukázky nebo stravenky se&nbsp;evidují vždy, i&nbsp;bez&nbsp;osobního kontaktu. Jedinou výjimkou je dobírka: hotovost vybere poštovní operátor a&nbsp;e-shopu ji pošle převodem.</p>
   ${kde}
   <div class="callout" data-review-id="callout-jednotky">
     <span class="label">Evidenční jednotky</span>
-    <p>Zákon nemluví o&nbsp;provozovnách, ale o&nbsp;evidenčních jednotkách: prodejna, výdejní místo, internetová stránka, dopravní prostředek. E-shop, který má prodejnu nebo výdejní místo s&nbsp;platbou na&nbsp;místě, musí v&nbsp;DIS+ oznámit <strong>všechny své jednotky, tedy i&nbsp;web</strong>. Tržby z&nbsp;webu se&nbsp;přesto neevidují.</p>
+    <p>Základní jednotkou evidence je evidenční jednotka: prodejna, výdejní místo, internetová stránka nebo dopravní prostředek. E-shop, který má prodejnu nebo výdejní místo s&nbsp;platbou na&nbsp;místě, musí v&nbsp;DIS+ oznámit <strong>všechny své jednotky, tedy i&nbsp;web</strong>. Tržby z&nbsp;webu se&nbsp;přesto neevidují.</p>
   </div>
 </section>
 
@@ -154,13 +154,13 @@ const body = `
       <tr><th scope="row">Osobní odběr, platba kartou na&nbsp;terminálu</th><td class="ano">Ano</td><td>Kontaktní platba v&nbsp;provozovně. Eviduje se&nbsp;částka skutečně stržená z&nbsp;karty.</td></tr>
       <tr><th scope="row">QR kód nebo převod zadaný na&nbsp;prodejně při převzetí</th><td class="ano">Ano</td><td>Platba je součástí prodeje na&nbsp;místě. Faktura se&nbsp;splatností, kterou zákazník náhodou zaplatí z&nbsp;mobilu v&nbsp;prodejně, se&nbsp;neeviduje.</td></tr>
       <tr><th scope="row">Dobírka vybraná dopravcem z&nbsp;evidence poštovních operátorů, hotově nebo kartou kurýrovi</th><td class="ne">Ne</td><td>Výjimka pro&nbsp;poštovní službu (§&nbsp;6 odst.&nbsp;2). Peníze přijdou e-shopu převodem. Dopravce dobírku neeviduje také, není to jeho příjem. Evidenci poštovních operátorů vede Český telekomunikační úřad.</td></tr>
-      <tr><th scope="row">Dobírka vybraná vlastním kurýrem e-shopu</th><td class="ano">Ano</td><td>Osobní kontakt s&nbsp;personálem a&nbsp;dopravní prostředek podnikatele. Hotovost i&nbsp;karta na&nbsp;mobilním terminálu. Dodávka je evidenční jednotka.</td></tr>
+      <tr><th scope="row">Dobírka vybraná vlastním kurýrem e-shopu</th><td class="ano">Ano</td><td>Osobní kontakt s&nbsp;personálem a&nbsp;dopravní prostředek podnikatele. Hotovost i&nbsp;karta na&nbsp;mobilním terminálu. Vozidlo e-shopu je evidenční jednotka.</td></tr>
       <tr><th scope="row">Výdejní místo nebo box třetí strany, platba tam</th><td class="ne">Ne</td><td>Platbu přijímá provozovatel výdejních míst a&nbsp;e-shopu ji posílá převodem. Závěr je odvozený ze&nbsp;zákona, oficiální příklad zatím chybí.</td></tr>
       <tr><th scope="row">Dárkový poukaz koupený online, uplatněný na&nbsp;prodejně</th><td class="cast">Záleží</td><td>Poukaz na&nbsp;konkrétní zboží nebo službu: nic se&nbsp;neeviduje, nákup proběhl na&nbsp;dálku. Hodnotový poukaz nebo kredit: čerpání na&nbsp;prodejně se&nbsp;eviduje jako kontaktní platba (§&nbsp;4 odst.&nbsp;2).</td></tr>
       <tr><th scope="row">Vrácení peněz za&nbsp;online objednávku na&nbsp;prodejně</th><td class="ne">Ne</td><td>Storno sleduje původní platbu. Ta byla na&nbsp;dálku, proto se&nbsp;vratka neeviduje, ani když ji vyplatíte hotově. Vratka hotovostního nákupu v&nbsp;hotovosti se&nbsp;eviduje jako záporná tržba.</td></tr>
       <tr><th scope="row">Záloha převodem, doplatek hotově na&nbsp;prodejně</th><td class="cast">Jen doplatek</td><td>Každá platba se&nbsp;posuzuje zvlášť. Záloha na&nbsp;dálku se&nbsp;neeviduje, doplatek na&nbsp;místě ano.</td></tr>
       <tr><th scope="row">Prodej přes online tržiště</th><td class="ne">Ne</td><td>Zákazník platí tržišti online a&nbsp;vyúčtování přijde převodem. Tržiště eviduje jen tehdy, když zboží vydá a&nbsp;inkasuje na&nbsp;své prodejně svým jménem.</td></tr>
-      <tr><th scope="row">Stánek na&nbsp;veletrhu nebo pop-up prodejna</th><td class="ano">Ano</td><td>Mobilní provozovna je evidenční jednotka. Oznamuje se&nbsp;v&nbsp;DIS+ před první tržbou.</td></tr>
+      <tr><th scope="row">Stánek na&nbsp;veletrhu nebo dočasná prodejna</th><td class="ano">Ano</td><td>Mobilní provozovna je evidenční jednotka. Oznamuje se&nbsp;v&nbsp;DIS+ před první tržbou.</td></tr>
     </tbody>
   </table>
   </div>
@@ -215,7 +215,7 @@ const body = `
     <li><strong>Certifikát</strong> vydává zdarma certifikační autorita Finanční správy přes DIS+ na&nbsp;portálu MOJE daně, od&nbsp;1.&nbsp;11.&nbsp;2026. Platí jeden rok, jeden certifikát lze použít pro&nbsp;více pokladen. Certifikáty z&nbsp;EET&nbsp;1.0 nelze použít.</li>
     <li><strong>Pokladní zařízení</strong> je jakékoli zařízení s&nbsp;připojením k&nbsp;internetu. Zákon nevyžaduje certifikovaný hardware ani software. Pokladna z&nbsp;EET&nbsp;1.0 funguje po&nbsp;aktualizaci softwaru na&nbsp;rozhraní verze&nbsp;4.1.</li>
     <li><strong>Evidenční jednotky</strong> oznamujete v&nbsp;DIS+ před prvním vygenerováním certifikátu, změny do&nbsp;15&nbsp;dnů. U&nbsp;e-shopu s&nbsp;prodejnou patří do&nbsp;oznámení i&nbsp;web.</li>
-    <li><strong>Účtenka</strong> s&nbsp;kódem se&nbsp;netiskne. Doklad zákazníkovi vydáváte jen tam, kde to ukládá jiný předpis, například zákon o&nbsp;DPH.</li>
+    <li><strong>Účtenku</strong> s&nbsp;kódem tisknout nemusíte. Doklad zákazníkovi vydáváte jen tam, kde to ukládá jiný předpis, například zákon o&nbsp;DPH.</li>
   </ul>
 
   <details class="more" data-review-id="plus-vypadek">
@@ -245,13 +245,13 @@ const body = `
 <section id="postup" data-review-id="section-postup">
   <span class="section-label">06 - Postup</span>
   <h2>Jak se&nbsp;připravit <span class="accent">do&nbsp;1.&nbsp;1.&nbsp;2027</span></h2>
-  <p class="lead">Většina e-shopů projde přípravou za&nbsp;odpoledne. Rozhodující je první krok: zjistit, zda vůbec přijímáte platby na&nbsp;místě.</p>
+  <p class="lead">Příprava má pět kroků a&nbsp;u&nbsp;většiny e-shopů skončí hned u&nbsp;prvního: zjistit, zda vůbec přijímáte platby na&nbsp;místě.</p>
   <ol class="flow" data-review-id="kroky">
     <li><b>Zjistěte, kde zákazníci platí na&nbsp;místě</b>Prodejna, výdejní místo, vlastní rozvoz, stánek na&nbsp;akci. Když žádné takové místo nemáte, evidovat nemusíte a&nbsp;další kroky se&nbsp;vás netýkají.</li>
     <li><b>Ověřte pokladní systém u&nbsp;dodavatele</b>Zda bude k&nbsp;1.&nbsp;1.&nbsp;2027 napojený na&nbsp;rozhraní EET&nbsp;2.0, kdy vydá aktualizaci a&nbsp;zda umí automatickou obnovu certifikátu.</li>
     <li><b>Od&nbsp;1.&nbsp;11.&nbsp;2026 vyřiďte DIS+</b>Na&nbsp;portálu MOJE daně se&nbsp;přihlaste k&nbsp;EET, oznamte evidenční jednotky včetně webu a&nbsp;vygenerujte pokladní certifikát. Nahrajte ho do&nbsp;pokladny.</li>
     <li><b>Nastavte e-shop</b>Platební metody u&nbsp;osobního odběru a&nbsp;výdejních míst, dobírku vlastním rozvozem, poukazy a&nbsp;kredit, proces vratek. Ať je jasné, které platby končí v&nbsp;pokladně a&nbsp;které v&nbsp;platební bráně.</li>
-    <li><b>Vyzkoušejte a&nbsp;spusťte</b>Od&nbsp;1.&nbsp;11.&nbsp;2026 běží produkční rozhraní v&nbsp;ověřovacím režimu. Od&nbsp;1.&nbsp;1.&nbsp;2027 evidujte ostře.</li>
+    <li><b>Vyzkoušejte a&nbsp;spusťte</b>Od&nbsp;1.&nbsp;11.&nbsp;2026 běží produkční rozhraní v&nbsp;ověřovacím režimu. Od&nbsp;1.&nbsp;1.&nbsp;2027 běží evidence naostro.</li>
   </ol>
   <div class="callout" data-review-id="callout-proc-ted">
     <span class="label">Proč začít v&nbsp;listopadu</span>

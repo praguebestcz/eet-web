@@ -22,7 +22,7 @@ ${ARROW}
   <rect x="330" y="45" width="300" height="70" rx="12" fill="#fff" stroke="currentColor" stroke-width="1.4"/>
   <text x="346" y="70" font-weight="700" font-size="14">Na dálku</text>
   <text x="346" y="90" font-size="12.5" fill="#525252">Platební brána, převod předem,</text>
-  <text x="346" y="106" font-size="12.5" fill="#525252">QR kód z webu, dobírka přes dopravce</text>
+  <text x="346" y="106" font-size="12.5" fill="#525252">QR kód z webu, dobírka přes poštovního operátora</text>
   <line x1="630" y1="80" x2="658" y2="80" stroke="currentColor" stroke-width="1.6" marker-end="url(#sipka)"/>
   <rect x="660" y="50" width="220" height="60" rx="12" fill="#f1f1f2" stroke="#e5e5e5"/>
   <text x="770" y="75" text-anchor="middle" font-weight="700" font-size="14" fill="#525252">Neeviduje se</text>
