@@ -10,12 +10,12 @@ const DATUM = '26.&nbsp;10.&nbsp;2026';
 const sticky = [
   { href: '#co-plati', label: 'Co platí a od kdy', n: '01' },
   { href: '#co-se-eviduje', label: 'Co se eviduje a co ne', n: '02' },
-  { href: '#priklady', label: 'Jak to dopadne v e-shopu', n: '03' },
-  { href: '#pokladna', label: 'Co pokladna posílá a co se mění', n: '04' },
-  { href: '#dozor', label: 'Co se stane při nesplnění', n: '05' },
-  { href: '#postup', label: 'Jak se připravit', n: '06' },
-  { href: '#pomoc', label: 'S čím pomůžeme', n: '07' },
-  { href: '#test', label: 'Týká se vás to?', n: '08' },
+  { href: '#test', label: 'Týká se vás to?', n: '03' },
+  { href: '#priklady', label: 'Jak to dopadne v e-shopu', n: '04' },
+  { href: '#pokladna', label: 'Co pokladna posílá a co se mění', n: '05' },
+  { href: '#dozor', label: 'Co se stane při nesplnění', n: '06' },
+  { href: '#postup', label: 'Jak se připravit', n: '07' },
+  { href: '#pomoc', label: 'S čím pomůžeme', n: '08' },
   { href: '#kontakt', label: 'Kontakt', n: '09' },
 ];
 
@@ -74,12 +74,12 @@ const body = `
   <ul>
     <li><a href="#co-plati"><span class="num">01</span>Co platí a&nbsp;od&nbsp;kdy</a><span class="d">Účinnost 1.&nbsp;1.&nbsp;2027, kdo je povinný, co je nové proti EET&nbsp;1.0.</span></li>
     <li><a href="#co-se-eviduje"><span class="num">02</span>Co se&nbsp;eviduje a&nbsp;co ne</a><span class="d">Kontaktní platba podle §&nbsp;6 a&nbsp;diagram rozhodnutí.</span></li>
-    <li><a href="#priklady"><span class="num">03</span>Jak to dopadne v&nbsp;e-shopu</a><span class="d">Patnáct situací od&nbsp;platební brány po&nbsp;stánek na&nbsp;veletrhu.</span></li>
-    <li><a href="#pokladna"><span class="num">04</span>Co pokladna posílá a&nbsp;co se&nbsp;mění</a><span class="d">Údaje, kód POK, certifikát, evidenční jednotky, výpadek.</span></li>
-    <li><a href="#dozor"><span class="num">05</span>Co se&nbsp;stane při nesplnění</a><span class="d">Pokuta až&nbsp;500&nbsp;000&nbsp;Kč, bez&nbsp;uzavření provozovny.</span></li>
-    <li><a href="#postup"><span class="num">06</span>Jak se&nbsp;připravit</a><span class="d">Pět kroků do&nbsp;1.&nbsp;1.&nbsp;2027.</span></li>
-    <li><a href="#pomoc"><span class="num">07</span>S&nbsp;čím pomůžeme</a><span class="d">Posouzení platebních míst a&nbsp;nastavení e-shopu.</span></li>
-    <li><a href="#test"><span class="num">08</span>Týká se vás to?</a><span class="d">Čtyři otázky a&nbsp;hned víte.</span></li>
+    <li><a href="#test"><span class="num">03</span>Týká se vás to?</a><span class="d">Čtyři otázky a&nbsp;hned víte.</span></li>
+    <li><a href="#priklady"><span class="num">04</span>Jak to dopadne v&nbsp;e-shopu</a><span class="d">Patnáct situací od&nbsp;platební brány po&nbsp;stánek na&nbsp;veletrhu.</span></li>
+    <li><a href="#pokladna"><span class="num">05</span>Co pokladna posílá a&nbsp;co se&nbsp;mění</a><span class="d">Údaje, kód POK, certifikát, evidenční jednotky, výpadek.</span></li>
+    <li><a href="#dozor"><span class="num">06</span>Co se&nbsp;stane při nesplnění</a><span class="d">Pokuta až&nbsp;500&nbsp;000&nbsp;Kč, bez&nbsp;uzavření provozovny.</span></li>
+    <li><a href="#postup"><span class="num">07</span>Jak se&nbsp;připravit</a><span class="d">Pět kroků do&nbsp;1.&nbsp;1.&nbsp;2027.</span></li>
+    <li><a href="#pomoc"><span class="num">08</span>S&nbsp;čím pomůžeme</a><span class="d">Posouzení platebních míst a&nbsp;nastavení e-shopu.</span></li>
     <li><a href="#kontakt"><span class="num">09</span>Kontakt</a><span class="d">Projektový manažer nebo produktaci@praguebest.cz.</span></li>
   </ul>
 </nav>
@@ -138,8 +138,24 @@ const body = `
   </div>
 </section>
 
+${kviz({
+  n: '03', nadpis: 'Týká se vás to?', akcent: 'Čtyři otázky.',
+  lead: 'Odpovězte Ano nebo Ne. Výsledek se nikam neposílá ani neukládá.',
+  otazky: [
+    { q: 'Může zákazník zaplatit až při osobním převzetí na prodejně nebo výdejním místě e-shopu?', ano: 2 },
+    { q: 'Přijímáte na místě hotovost, kartu přes terminál nebo QR platbu?', ano: 1 },
+    { q: 'Rozvážíte zboží vlastními kurýry a vybíráte platbu při doručení?', ano: 3 },
+    { q: 'Prodáváte jen online s platbou předem?', ano: -9 },
+  ],
+  vysledky: [
+    { min: 3, nadpis: 'Evidovat musíte.', text: 'Platba při převzetí nebo při doručení vlastním kurýrem je kontaktní platba. Ověřte u dodavatele pokladny, že bude k 1. 1. 2027 připravená, a od 1. 11. 2026 vyřiďte certifikát v DIS+.', odkaz: '#postup', odkazText: 'Jak se připravit' },
+    { min: 1, nadpis: 'Pravděpodobně evidovat musíte.', text: 'Jakmile zákazník platí na místě, jde o evidovanou tržbu. Projděte si v tabulce situací, které platby na místě přijímáte.', odkaz: '#priklady', odkazText: 'Tabulka situací' },
+    { min: 0, nejiste: true, nadpis: 'Evidovat nemusíte.', text: 'Platby na dálku přes e-shop evidenci nepodléhají. Pokud později otevřete výdejní místo nebo začnete rozvážet vlastními kurýry, vraťte se k sekci 02.', odkaz: '#co-se-eviduje', odkazText: 'Co se eviduje' },
+  ],
+})}
+
 <section id="priklady" data-review-id="section-priklady">
-  <span class="section-label">03 - Příklady</span>
+  <span class="section-label">04 - Příklady</span>
   <h2>Jak to dopadne <span class="accent">v&nbsp;e-shopu</span></h2>
   <p class="lead">Patnáct situací, které v&nbsp;e-shopech nastávají nejčastěji. U&nbsp;každé je uvedeno, zda tržba evidenci podléhá a&nbsp;proč. Zdrojem je zákon, důvodová zpráva a&nbsp;příklady z&nbsp;metodiky Finanční správy.</p>
   <div class="table-wrap" data-review-id="tabulka-situace">
@@ -179,7 +195,7 @@ const body = `
 </section>
 
 <section id="pokladna" data-review-id="section-pokladna">
-  <span class="section-label">04 - Požadavky</span>
+  <span class="section-label">05 - Požadavky</span>
   <h2>Co pokladna posílá <span class="accent">a&nbsp;co se&nbsp;mění</span></h2>
   <p class="lead">Evidenci zajišťuje pokladní systém: při kontaktní platbě odešle Finanční správě datovou zprávu podepsanou pokladním certifikátem a&nbsp;přijme potvrzovací kód POK. E-shop sám nic neposílá, pokud platby na&nbsp;místě nepřijímá.</p>
   ${tok}
@@ -231,7 +247,7 @@ const body = `
 </section>
 
 <section id="dozor" data-review-id="section-dozor">
-  <span class="section-label">05 - Dozor</span>
+  <span class="section-label">06 - Dozor</span>
   <h2>Co se&nbsp;stane, když tržby <span class="accent">neevidujete</span></h2>
   <p class="lead">Dozor vykonává Finanční správa, Celní správa prověřuje plnění povinností na&nbsp;místě. Zákon zná dva přestupky: <strong>nezaslání údajů o&nbsp;evidované tržbě</strong> (§&nbsp;24) a&nbsp;<strong>závažné ztěžování nebo maření evidence</strong> (§&nbsp;23). U&nbsp;obou je horní hranice pokuty 500&nbsp;000&nbsp;Kč, místo pokuty lze uložit napomenutí. Uzavření provozovny ani pozastavení činnosti zákon neumožňuje.</p>
   <div class="callout ok" data-review-id="callout-pocita-se">
@@ -241,7 +257,7 @@ const body = `
 </section>
 
 <section id="postup" data-review-id="section-postup">
-  <span class="section-label">06 - Postup</span>
+  <span class="section-label">07 - Postup</span>
   <h2>Jak se&nbsp;připravit <span class="accent">do&nbsp;1.&nbsp;1.&nbsp;2027</span></h2>
   <p class="lead">Příprava má pět kroků a&nbsp;u&nbsp;většiny e-shopů skončí hned u&nbsp;prvního: zjistit, zda vůbec přijímáte platby na&nbsp;místě.</p>
   <ol class="flow" data-review-id="kroky">
@@ -254,7 +270,7 @@ const body = `
 </section>
 
 <section id="pomoc" data-review-id="section-pomoc">
-  <span class="section-label">07 - Služby</span>
+  <span class="section-label">08 - Služby</span>
   <h2>S&nbsp;čím <span class="accent">pomůžeme</span></h2>
   <p class="lead">Pokladnu řeší její dodavatel. My se&nbsp;postaráme o&nbsp;to, aby e-shop a&nbsp;platby na&nbsp;místě do&nbsp;sebe zapadaly.</p>
   <div class="cards" data-review-id="sluzby">
@@ -267,21 +283,6 @@ const body = `
   </div>
 </section>
 
-${kviz({
-  n: '08', nadpis: 'Týká se vás to?', akcent: 'Čtyři otázky.',
-  lead: 'Odpovězte Ano nebo Ne. Výsledek se nikam neposílá ani neukládá.',
-  otazky: [
-    { q: 'Může zákazník zaplatit až při osobním převzetí na prodejně nebo výdejním místě e-shopu?', ano: 2 },
-    { q: 'Přijímáte na místě hotovost, kartu přes terminál nebo QR platbu?', ano: 1 },
-    { q: 'Rozvážíte zboží vlastními kurýry a vybíráte platbu při doručení?', ano: 3 },
-    { q: 'Prodáváte jen online s platbou předem?', ano: -9 },
-  ],
-  vysledky: [
-    { min: 3, nadpis: 'Evidovat musíte.', text: 'Platba při převzetí nebo při doručení vlastním kurýrem je kontaktní platba. Ověřte u dodavatele pokladny, že bude k 1. 1. 2027 připravená, a od 1. 11. 2026 vyřiďte certifikát v DIS+.', odkaz: '#postup', odkazText: 'Jak se připravit' },
-    { min: 1, nadpis: 'Pravděpodobně evidovat musíte.', text: 'Jakmile zákazník platí na místě, jde o evidovanou tržbu. Projděte si v tabulce situací, které platby na místě přijímáte.', odkaz: '#priklady', odkazText: 'Tabulka situací' },
-    { min: 0, nejiste: true, nadpis: 'Evidovat nemusíte.', text: 'Platby na dálku přes e-shop evidenci nepodléhají. Pokud později otevřete výdejní místo nebo začnete rozvážet vlastními kurýry, vraťte se k sekci 02.', odkaz: '#co-se-eviduje', odkazText: 'Co se eviduje' },
-  ],
-})}
 <section id="kontakt" data-review-id="section-kontakt">
   <span class="section-label">09 - Kontakt</span>
   <div class="keybox" data-review-id="cta">
