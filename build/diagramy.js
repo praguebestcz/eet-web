@@ -9,39 +9,37 @@ const ARROW = `<defs>
 // 1) Rozhodnutí: kde zákazník platí
 const kde = `
 <figure class="dg" data-review-id="diagram-kde-plati">
-<svg viewBox="0 0 900 330" role="img" aria-label="Rozhoduje místo platby: platba na dálku přes web se neeviduje, platba na místě při převzetí se eviduje." font-family="inherit" font-size="13" color="#0a0a0a">
+<svg viewBox="0 0 900 300" role="img" aria-label="Rozhoduje místo platby: platba na dálku přes web se neeviduje, platba na místě při převzetí se eviduje." font-family="inherit" font-size="13" color="#0a0a0a">
 ${ARROW}
   <!-- start -->
-  <rect x="20" y="135" width="160" height="60" rx="12" fill="#0a0a0a"/>
-  <text x="100" y="160" text-anchor="middle" fill="#fff" font-weight="700" font-size="14">Zákazník platí</text>
-  <text x="100" y="180" text-anchor="middle" fill="#cfcfcf" font-size="12">objednávku z e-shopu</text>
+  <rect x="20" y="135" width="150" height="60" rx="12" fill="#0a0a0a"/>
+  <text x="95" y="160" text-anchor="middle" fill="#fff" font-weight="700" font-size="14">Zákazník platí</text>
+  <text x="95" y="180" text-anchor="middle" fill="#cfcfcf" font-size="12">objednávku z e-shopu</text>
 
   <!-- větev nahoru: na dálku -->
-  <path d="M180 165 H215 V80 H248" fill="none" stroke="currentColor" stroke-width="1.6" marker-end="url(#sipka)"/>
-  <text x="232" y="150" text-anchor="start" font-size="12" fill="#525252" transform="rotate(-90 232 150)">zaplatí předem</text>
-  <rect x="250" y="45" width="310" height="70" rx="12" fill="#fff" stroke="currentColor" stroke-width="1.4"/>
-  <text x="266" y="70" font-weight="700" font-size="14">Na dálku</text>
-  <text x="266" y="90" font-size="12.5" fill="#525252">Platební brána, převod předem, QR kód z webu,</text>
-  <text x="266" y="106" font-size="12.5" fill="#525252">dobírka přes poštovního dopravce</text>
-  <line x1="560" y1="80" x2="618" y2="80" stroke="currentColor" stroke-width="1.6" marker-end="url(#sipka)"/>
-  <rect x="620" y="50" width="260" height="60" rx="12" fill="#f1f1f2" stroke="#e5e5e5"/>
-  <text x="750" y="75" text-anchor="middle" font-weight="700" font-size="14" fill="#525252">Neeviduje se</text>
-  <text x="750" y="95" text-anchor="middle" font-size="12" fill="#737373">platba na dálku není evidovaná tržba</text>
+  <path d="M170 165 H200 V80 H328" fill="none" stroke="currentColor" stroke-width="1.6" marker-end="url(#sipka)"/>
+  <text x="266" y="70" text-anchor="middle" font-size="12" fill="#525252">zaplatí předem</text>
+  <rect x="330" y="45" width="300" height="70" rx="12" fill="#fff" stroke="currentColor" stroke-width="1.4"/>
+  <text x="346" y="70" font-weight="700" font-size="14">Na dálku</text>
+  <text x="346" y="90" font-size="12.5" fill="#525252">Platební brána, převod předem,</text>
+  <text x="346" y="106" font-size="12.5" fill="#525252">QR kód z webu, dobírka přes dopravce</text>
+  <line x1="630" y1="80" x2="658" y2="80" stroke="currentColor" stroke-width="1.6" marker-end="url(#sipka)"/>
+  <rect x="660" y="50" width="220" height="60" rx="12" fill="#f1f1f2" stroke="#e5e5e5"/>
+  <text x="770" y="75" text-anchor="middle" font-weight="700" font-size="14" fill="#525252">Neeviduje se</text>
+  <text x="770" y="95" text-anchor="middle" font-size="12" fill="#737373">není evidovaná tržba</text>
 
   <!-- větev dolů: na místě -->
-  <path d="M180 165 H215 V250 H248" fill="none" stroke="#DA2A49" stroke-width="1.8" marker-end="url(#sipka-a)"/>
-  <text x="232" y="285" text-anchor="start" font-size="12" fill="#DA2A49" transform="rotate(-90 232 285)">zaplatí při převzetí</text>
-  <rect x="250" y="215" width="310" height="70" rx="12" fill="#fff" stroke="#DA2A49" stroke-width="1.6"/>
-  <text x="266" y="240" font-weight="700" font-size="14">Na místě</text>
-  <text x="266" y="260" font-size="12.5" fill="#525252">Prodejna, výdejní místo e-shopu, vlastní kurýr:</text>
-  <text x="266" y="276" font-size="12.5" fill="#525252">hotovost, terminál, QR kód na místě</text>
-  <line x1="560" y1="250" x2="618" y2="250" stroke="#DA2A49" stroke-width="1.8" marker-end="url(#sipka-a)"/>
-  <rect x="620" y="220" width="260" height="60" rx="12" fill="#DA2A49"/>
-  <text x="750" y="245" text-anchor="middle" font-weight="700" font-size="14" fill="#fff">Eviduje se</text>
-  <text x="750" y="265" text-anchor="middle" font-size="12" fill="rgba(255,255,255,0.85)">hotovost i kontaktní platba podle § 6</text>
+  <path d="M170 165 H200 V250 H328" fill="none" stroke="#DA2A49" stroke-width="1.8" marker-end="url(#sipka-a)"/>
+  <text x="266" y="240" text-anchor="middle" font-size="12" fill="#DA2A49">zaplatí při převzetí</text>
+  <rect x="330" y="215" width="300" height="70" rx="12" fill="#fff" stroke="#DA2A49" stroke-width="1.6"/>
+  <text x="346" y="240" font-weight="700" font-size="14">Na místě</text>
+  <text x="346" y="260" font-size="12.5" fill="#525252">Prodejna, výdejní místo, vlastní kurýr:</text>
+  <text x="346" y="276" font-size="12.5" fill="#525252">hotovost, terminál, QR kód na místě</text>
+  <line x1="630" y1="250" x2="658" y2="250" stroke="#DA2A49" stroke-width="1.8" marker-end="url(#sipka-a)"/>
+  <rect x="660" y="220" width="220" height="60" rx="12" fill="#DA2A49"/>
+  <text x="770" y="245" text-anchor="middle" font-weight="700" font-size="14" fill="#fff">Eviduje se</text>
+  <text x="770" y="265" text-anchor="middle" font-size="12" fill="rgba(255,255,255,0.85)">kontaktní platba podle § 6</text>
 
-  <!-- poznámka dole -->
-  <text x="450" y="318" text-anchor="middle" font-size="12" fill="#737373">Rozhoduje, kde zákazník platí, ne jakou kartou nebo aplikací.</text>
 </svg>
 <figcaption>Stejná karta nebo stejný QR kód dopadne jinak podle toho, kde platba proběhne. Platba na dálku je mimo evidenci, platba při osobním převzetí je evidovaná tržba.</figcaption>
 </figure>`;
@@ -82,7 +80,7 @@ ${ARROW}
   <text x="770" y="120" text-anchor="middle" font-size="12" fill="#6b4200">nejpozději do 48 hodin</text>
   <line x1="620" y1="98" x2="658" y2="98" stroke="rgba(168,100,0,0.6)" stroke-width="1.4" stroke-dasharray="4 4"/>
 </svg>
-<figcaption>Evidenci zajišťuje pokladní systém: podepsané údaje o tržbě odejdou Finanční správě a zpět přijde kód POK. Zákazník účtenku s potvrzením dostat nemusí.</figcaption>
+<figcaption>Tok jedné evidované tržby: odeslání údajů, potvrzení kódem POK a náhradní postup bez připojení.</figcaption>
 </figure>`;
 
 module.exports = { kde, tok };

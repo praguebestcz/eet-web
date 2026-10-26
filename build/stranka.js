@@ -60,7 +60,7 @@ const body = `
     <div class="kt"><b>Až&nbsp;500&nbsp;000&nbsp;Kč</b><span>horní hranice pokuty, dozor Finanční správa</span></div>
   </div>
   <p><strong>Rozhoduje, kde zákazník platí, ne&nbsp;čím.</strong> Platba kartou v&nbsp;platební bráně e-shopu se&nbsp;neeviduje. Stejná karta přiložená k&nbsp;terminálu na&nbsp;prodejně ano. E-shop bez&nbsp;prodejny, výdejního místa a&nbsp;vlastního rozvozu evidovat nemusí.</p>
-  <p>Kdo přijímá platby na&nbsp;místě, potřebuje od&nbsp;1.&nbsp;1.&nbsp;2027 pokladní systém napojený na&nbsp;EET&nbsp;2.0 a&nbsp;pokladní certifikát z&nbsp;portálu MOJE daně. Certifikát jde vygenerovat od&nbsp;1.&nbsp;11.&nbsp;2026.</p>
+  <p>Kdo přijímá platby na&nbsp;místě, potřebuje pokladnu napojenou na&nbsp;EET&nbsp;2.0 a&nbsp;pokladní certifikát z&nbsp;portálu MOJE daně.</p>
 </div>
 
 <div class="disclaimer" data-review-id="disclaimer">
@@ -95,7 +95,7 @@ const body = `
     <div class="card" data-review-id="karta-nove">
       <span class="tag neutral">Co je jinak než v&nbsp;EET&nbsp;1.0</span>
       <h3>Rozhoduje kontakt, ne&nbsp;hotovost</h3>
-      <p>Původní zákon rozlišoval hotovost a&nbsp;bezhotovostní platby. Nový zákon rozlišuje platbu na&nbsp;místě a&nbsp;platbu na&nbsp;dálku. Karta na&nbsp;terminálu prodejny se&nbsp;eviduje, karta v&nbsp;platební bráně ne.</p>
+      <p>Původní zákon rozlišoval hotovost a&nbsp;bezhotovostní platby. Nový zákon rozlišuje platbu na&nbsp;místě a&nbsp;platbu na&nbsp;dálku, a&nbsp;to bez&nbsp;ohledu na&nbsp;způsob úhrady.</p>
     </div>
   </div>
   <div class="table-wrap" data-review-id="tabulka-terminy">
@@ -105,7 +105,7 @@ const body = `
     <tbody>
       <tr><td><strong>7.&nbsp;10.&nbsp;2026</strong></td><td>Zákon vyhlášen ve&nbsp;Sbírce zákonů (částka 180).</td></tr>
       <tr><td><strong>1.&nbsp;11.&nbsp;2026</strong></td><td>Na&nbsp;portálu MOJE daně (DIS+) jde přihlásit se&nbsp;k&nbsp;EET, oznámit evidenční jednotky a&nbsp;vygenerovat pokladní certifikát. Produkční rozhraní běží v&nbsp;ověřovacím režimu.</td></tr>
-      <tr><td><strong>1.&nbsp;12.&nbsp;2026</strong></td><td>Finanční správa spouští bezplatnou webovou pokladnu MOJE eet pro&nbsp;malé podnikatele (nejvýše dvě evidenční jednotky).</td></tr>
+      <tr><td><strong>1.&nbsp;12.&nbsp;2026</strong></td><td>Finanční správa spouští bezplatnou webovou pokladnu MOJE eet.</td></tr>
       <tr><td><strong>1.&nbsp;1.&nbsp;2027</strong></td><td>Účinnost zákona, začátek evidence. Leden Finanční správa označuje za&nbsp;pilotní režim s&nbsp;důrazem na&nbsp;metodickou podporu. Jde ale o&nbsp;standardní evidenci, ne&nbsp;o&nbsp;odklad.</td></tr>
     </tbody>
   </table>
@@ -114,13 +114,13 @@ const body = `
 <summary>Jak se&nbsp;nový zákon liší od&nbsp;EET&nbsp;1.0 z&nbsp;roku 2016</summary>
 <div>
 <ul class="dots">
-  <li><strong>Jiné kritérium.</strong> Evidují se&nbsp;hotovost a&nbsp;kontaktní platby, tedy i&nbsp;karta nebo QR kód při osobním kontaktu nebo v&nbsp;provozovně. Platby na&nbsp;dálku jsou mimo. Senát chtěl bezhotovostní platby vyjmout, Sněmovna 9.&nbsp;9.&nbsp;2026 setrvala na&nbsp;původním znění.</li>
+  <li><strong>Jiné kritérium.</strong> Senát chtěl bezhotovostní platby vyjmout, Sněmovna 9.&nbsp;9.&nbsp;2026 setrvala na&nbsp;původním znění.</li>
   <li><strong>Méně údajů.</strong> Neposílají se&nbsp;položky, DPH ani způsob platby. Kódy FIK, BKP a&nbsp;PKP nahrazuje jediný potvrzovací kód POK.</li>
-  <li><strong>Bez&nbsp;účtenky a&nbsp;bez&nbsp;cedule.</strong> Zákon účtenku s&nbsp;kódem ani informační oznámení na&nbsp;provozovně nevyžaduje. Doklad zákazníkovi může ukládat jiný předpis.</li>
+  <li><strong>Bez&nbsp;informačního oznámení.</strong> Cedule o&nbsp;evidenci tržeb na&nbsp;provozovně odpadá.</li>
   <li><strong>Jeden online režim.</strong> Zjednodušený a&nbsp;zvláštní režim s&nbsp;papírovými účtenkami z&nbsp;bloku neexistují.</li>
-  <li><strong>Bez&nbsp;uzavření provozovny.</strong> Sankce jsou jen pokuty, horní hranice 500&nbsp;000&nbsp;Kč zůstává.</li>
-  <li><strong>Nové rozhraní.</strong> Verze 4.1 není kompatibilní s&nbsp;původní verzí 3.1. Pokladna z&nbsp;EET&nbsp;1.0 jde použít jen po&nbsp;aktualizaci softwaru a&nbsp;s&nbsp;novým certifikátem.</li>
-  <li><strong>Nově EET OFF a&nbsp;sleva na&nbsp;dani.</strong> Podnikatel v&nbsp;prvním pásmu paušální daně s&nbsp;příjmy do&nbsp;1&nbsp;000&nbsp;000&nbsp;Kč se&nbsp;může evidence zprostit za&nbsp;přirážku 1&nbsp;400&nbsp;Kč měsíčně. Fyzické osoby mají v&nbsp;prvním roce evidence slevu na&nbsp;dani až&nbsp;5&nbsp;000&nbsp;Kč.</li>
+  <li><strong>Bez&nbsp;uzavření provozovny.</strong> Zákon zná jen pokuty.</li>
+  <li><strong>Nové rozhraní.</strong> Verze 4.1 není kompatibilní s&nbsp;původní verzí 3.1.</li>
+  <li><strong>Nově EET OFF a&nbsp;sleva na&nbsp;dani</strong> (podrobnosti v&nbsp;sekci 04).</li>
 </ul>
 </div>
 </details>
@@ -132,30 +132,6 @@ const body = `
   <p class="lead">Evidovaná tržba musí splnit tři podmínky zároveň: je to <strong>kontaktní platba</strong>, je to <strong>příjem z&nbsp;podnikání</strong> a&nbsp;nevztahuje se&nbsp;na&nbsp;ni výjimka. Stačí, aby jedna podmínka chyběla, a&nbsp;platba se&nbsp;neeviduje.</p>
   <p>Kontaktní platba je podle §&nbsp;6 platba při <strong>osobním kontaktu</strong> s&nbsp;podnikatelem nebo jeho personálem, nebo platba <strong>v&nbsp;provozovně či&nbsp;dopravním prostředku</strong> podnikatele v&nbsp;souvislosti s&nbsp;prodejem. Hotovost, šeky, poukázky a&nbsp;stravenky se&nbsp;evidují vždy, i&nbsp;bez&nbsp;osobního kontaktu. Jedinou výjimkou je dobírka: hotovost vybere poštovní dopravce a&nbsp;e-shopu ji pošle převodem.</p>
   ${kde}
-  <div class="cols2">
-    <div class="card" data-review-id="karta-na-dalku">
-      <span class="tag neutral">Neeviduje se</span>
-      <h3>Platba na&nbsp;dálku</h3>
-      <ul>
-        <li>Karta v&nbsp;platební bráně e-shopu</li>
-        <li>Bankovní převod podle objednávky nebo faktury</li>
-        <li>QR kód na&nbsp;webu nebo v&nbsp;e-mailu</li>
-        <li>Platba předem a&nbsp;pouhé vyzvednutí zboží</li>
-        <li>Dobírka přes dopravce z&nbsp;evidence poštovních operátorů</li>
-      </ul>
-    </div>
-    <div class="card" data-review-id="karta-na-miste">
-      <span class="tag">Eviduje se</span>
-      <h3>Platba na&nbsp;místě</h3>
-      <ul>
-        <li>Hotovost kdekoli, i&nbsp;poslaná v&nbsp;obálce</li>
-        <li>Karta na&nbsp;terminálu prodejny nebo výdejního místa</li>
-        <li>QR kód nebo převod zadaný na&nbsp;místě jako součást nákupu</li>
-        <li>Platba vlastnímu kurýrovi e-shopu, hotově i&nbsp;kartou</li>
-        <li>Stravenky, dárkové karty a&nbsp;kredit čerpaný na&nbsp;prodejně</li>
-      </ul>
-    </div>
-  </div>
   <div class="callout" data-review-id="callout-jednotky">
     <span class="label">Evidenční jednotky</span>
     <p>Zákon nemluví o&nbsp;provozovnách, ale o&nbsp;evidenčních jednotkách: prodejna, výdejní místo, internetová stránka, dopravní prostředek. E-shop, který má prodejnu nebo výdejní místo s&nbsp;platbou na&nbsp;místě, musí v&nbsp;DIS+ oznámit <strong>všechny své jednotky, tedy i&nbsp;web</strong>. Tržby z&nbsp;webu se&nbsp;přesto neevidují.</p>
@@ -272,21 +248,21 @@ const body = `
   <p class="lead">Většina e-shopů projde přípravou za&nbsp;odpoledne. Rozhodující je první krok: zjistit, zda vůbec přijímáte platby na&nbsp;místě.</p>
   <ol class="flow" data-review-id="kroky">
     <li><b>Zjistěte, kde zákazníci platí na&nbsp;místě</b>Prodejna, výdejní místo, vlastní rozvoz, stánek na&nbsp;akci. Když žádné takové místo nemáte, evidovat nemusíte a&nbsp;další kroky se&nbsp;vás netýkají.</li>
-    <li><b>Ověřte pokladní systém u&nbsp;dodavatele</b>Zda bude k&nbsp;1.&nbsp;1.&nbsp;2027 napojený na&nbsp;rozhraní EET&nbsp;2.0 verze&nbsp;4.1, kdy vydá aktualizaci a&nbsp;zda umí automatickou obnovu certifikátu. Pokladna z&nbsp;EET&nbsp;1.0 bez&nbsp;aktualizace nefunguje.</li>
+    <li><b>Ověřte pokladní systém u&nbsp;dodavatele</b>Zda bude k&nbsp;1.&nbsp;1.&nbsp;2027 napojený na&nbsp;rozhraní EET&nbsp;2.0, kdy vydá aktualizaci a&nbsp;zda umí automatickou obnovu certifikátu.</li>
     <li><b>Od&nbsp;1.&nbsp;11.&nbsp;2026 vyřiďte DIS+</b>Na&nbsp;portálu MOJE daně se&nbsp;přihlaste k&nbsp;EET, oznamte evidenční jednotky včetně webu a&nbsp;vygenerujte pokladní certifikát. Nahrajte ho do&nbsp;pokladny.</li>
     <li><b>Nastavte e-shop</b>Platební metody u&nbsp;osobního odběru a&nbsp;výdejních míst, dobírku vlastním rozvozem, poukazy a&nbsp;kredit, proces vratek. Ať je jasné, které platby končí v&nbsp;pokladně a&nbsp;které v&nbsp;platební bráně.</li>
     <li><b>Vyzkoušejte a&nbsp;spusťte</b>Od&nbsp;1.&nbsp;11.&nbsp;2026 běží produkční rozhraní v&nbsp;ověřovacím režimu. Od&nbsp;1.&nbsp;1.&nbsp;2027 evidujte ostře.</li>
   </ol>
   <div class="callout" data-review-id="callout-proc-ted">
     <span class="label">Proč začít v&nbsp;listopadu</span>
-    <p>Certifikát a&nbsp;evidenční jednotky jdou vyřídit od&nbsp;1.&nbsp;11.&nbsp;2026. Dodavatelé pokladen vydávají aktualizace průběžně a&nbsp;v&nbsp;prosinci bude o&nbsp;jejich podporu největší zájem. Kdo má hotovo v&nbsp;listopadu, má prosinec na&nbsp;předvánoční sezónu.</p>
+    <p>Dodavatelé pokladen vydávají aktualizace průběžně a&nbsp;v&nbsp;prosinci bude o&nbsp;jejich podporu největší zájem. Kdo má hotovo v&nbsp;listopadu, má prosinec na&nbsp;předvánoční sezónu.</p>
   </div>
 </section>
 
 <section id="pomoc" data-review-id="section-pomoc">
   <span class="section-label">07 - Služby</span>
   <h2>S&nbsp;čím <span class="accent">pomůžeme</span></h2>
-  <p class="lead">Samotnou evidenci zajistí váš pokladní systém. My se&nbsp;postaráme o&nbsp;to, aby e-shop a&nbsp;platby na&nbsp;místě do&nbsp;sebe zapadaly.</p>
+  <p class="lead">Pokladnu řeší její dodavatel. My se&nbsp;postaráme o&nbsp;to, aby e-shop a&nbsp;platby na&nbsp;místě do&nbsp;sebe zapadaly.</p>
   <div class="cards" data-review-id="sluzby">
     <div class="card"><h3>Posouzení platebních míst</h3><p>Projdeme, kde a&nbsp;jak vaši zákazníci platí, a&nbsp;řekneme, co z&nbsp;toho evidenci podléhá.</p></div>
     <div class="card"><h3>Nastavení platebních metod</h3><p>Osobní odběr, výdejní místa, dobírka a&nbsp;vlastní rozvoz v&nbsp;e-shopu tak, aby bylo jasné, co končí v&nbsp;pokladně.</p></div>
