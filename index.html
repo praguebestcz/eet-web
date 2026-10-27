@@ -349,6 +349,11 @@
   td.ne { color: var(--ok); }
   td.cast { color: var(--warn); }
   @media print { figure.dg { break-inside: avoid; } figure.dg svg { border: 0; padding: 0; } }
+  /* dlaždice klíčového závěru: bílé na černém, ne černé na černém (Hana 27. 10. 2026) */
+  .keytiles .kt { background: #fff; border-color: #fff; }
+  .keytiles .kt b { color: var(--ink); }
+  .keytiles .kt span { color: var(--ink-2); }
+  @media print { .keytiles .kt { border: 1px solid var(--line); } }
 </style>
 <style>
   .kviz { background: #fff; border: 1px solid var(--line); border-radius: 16px; max-width: 1000px; margin: 22px 0; }
@@ -404,7 +409,7 @@
 
 <div class="top-bar" data-review-id="topbar">
   <span class="brand">PragueBest&nbsp;s.r.o.</span>
-  <span>Podklad pro&nbsp;klienty&nbsp;/ verze 1.0&nbsp;/ 26.&nbsp;10.&nbsp;2026</span>
+  <span>Podklad pro&nbsp;klienty&nbsp;/ verze 1.1&nbsp;/ 27.&nbsp;10.&nbsp;2026</span>
 </div>
 
 <header class="doc-header" data-review-id="header">
@@ -436,7 +441,7 @@
 </div>
 
 <div class="disclaimer" data-review-id="disclaimer">
-  <strong>⚠️ Toto není právní ani daňové stanovisko.</strong> Stránka shrnuje zákon č.&nbsp;180/2026&nbsp;Sb., důvodovou zprávu k&nbsp;němu a&nbsp;materiály Finanční správy ke&nbsp;dni 26.&nbsp;10.&nbsp;2026. Podrobnou metodiku pro&nbsp;kombinované modely (e‑shop s&nbsp;prodejnou nebo výdejním místem) Finanční správa teprve vydá. Posouzení konkrétní situace patří vašemu daňovému poradci.
+  <strong>⚠️ Toto není právní ani daňové stanovisko.</strong> Stránka shrnuje zákon č.&nbsp;180/2026&nbsp;Sb., důvodovou zprávu k&nbsp;němu a&nbsp;materiály Finanční správy ke&nbsp;dni 27.&nbsp;10.&nbsp;2026. Podrobnou metodiku pro&nbsp;kombinované modely (e‑shop s&nbsp;prodejnou nebo výdejním místem) Finanční správa teprve vydá. Posouzení konkrétní situace patří vašemu daňovému poradci.
 </div>
 
 <nav class="toc toc-list" aria-label="Obsah" data-review-id="toc">
@@ -584,7 +589,7 @@
       <tr><th scope="row">Osobní odběr na&nbsp;prodejně, platba hotově</th><td class="ano">Ano</td><td>Hotovost se&nbsp;eviduje vždy (§&nbsp;6 odst.&nbsp;2).</td></tr>
       <tr><th scope="row">Osobní odběr, platba kartou na&nbsp;terminálu</th><td class="ano">Ano</td><td>Kontaktní platba v&nbsp;provozovně. Eviduje se&nbsp;částka skutečně stržená z&nbsp;karty.</td></tr>
       <tr><th scope="row">QR kód nebo převod zadaný na&nbsp;prodejně při převzetí</th><td class="ano">Ano</td><td>Platba je součástí prodeje na&nbsp;místě. Faktura se&nbsp;splatností, kterou zákazník náhodou zaplatí z&nbsp;mobilu v&nbsp;prodejně, se&nbsp;neeviduje.</td></tr>
-      <tr><th scope="row">Dobírka vybraná dopravcem z&nbsp;evidence poštovních operátorů, hotově nebo kartou kurýrovi</th><td class="ne">Ne</td><td>Výjimka pro&nbsp;poštovní službu (§&nbsp;6 odst.&nbsp;2). Peníze přijdou e‑shopu převodem. Dopravce dobírku neeviduje také, není to jeho příjem. Evidenci poštovních operátorů vede Český telekomunikační úřad.</td></tr>
+      <tr><th scope="row">Dobírka vybraná dopravcem z&nbsp;evidence poštovních operátorů, hotově nebo kartou kurýrovi</th><td class="ne">Ne</td><td>Výjimka pro&nbsp;poštovní službu (§&nbsp;6 odst.&nbsp;2). Peníze přijdou e‑shopu převodem. Dopravce ji neeviduje také, protože to není jeho příjem. Evidenci poštovních operátorů vede Český telekomunikační úřad.</td></tr>
       <tr><th scope="row">Dobírka vybraná vlastním kurýrem e‑shopu</th><td class="ano">Ano</td><td>Osobní kontakt s&nbsp;personálem a&nbsp;dopravní prostředek podnikatele. Hotovost i&nbsp;karta na&nbsp;mobilním terminálu. Vozidlo e‑shopu je evidenční jednotka.</td></tr>
       <tr><th scope="row">Výdejní místo nebo box třetí strany, platba tam</th><td class="ne">Ne</td><td>Platbu přijímá provozovatel výdejních míst a&nbsp;e‑shopu ji posílá převodem. Závěr je odvozený ze&nbsp;zákona, oficiální příklad zatím chybí.</td></tr>
       <tr><th scope="row">Dárkový poukaz koupený online, uplatněný na&nbsp;prodejně</th><td class="cast">Záleží</td><td>Poukaz na&nbsp;konkrétní zboží nebo službu: nic se&nbsp;neeviduje, nákup proběhl na&nbsp;dálku. Hodnotový poukaz nebo kredit: čerpání na&nbsp;prodejně se&nbsp;eviduje jako kontaktní platba (§&nbsp;4 odst.&nbsp;2).</td></tr>
@@ -749,7 +754,7 @@
 
 <footer class="doc-footer" data-review-id="footer">
   <p>Zdroje: <a href="https://www.zakonyprolidi.cz/cs/2026-180">zákon č.&nbsp;180/2026&nbsp;Sb.</a> · <a href="https://www.psp.cz/sqw/historie.sqw?o=10&amp;t=189">důvodová zpráva, sněmovní tisk 189</a> · <a href="https://eet.gov.cz/">eet.gov.cz</a> · <a href="https://eet.gov.cz/cs/o-eet/dokumenty-k-eet-2-0">metodika Finanční správy: Popis položek datové zprávy, Příručka EET&nbsp;2.0</a></p>
-  <p>PragueBest&nbsp;s.r.o. · podklad pro&nbsp;klienty · verze 1.0, 26.&nbsp;10.&nbsp;2026</p>
+  <p>PragueBest&nbsp;s.r.o. · podklad pro&nbsp;klienty · verze 1.1, 27.&nbsp;10.&nbsp;2026</p>
 </footer>
 
 </div>

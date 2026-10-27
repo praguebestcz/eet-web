@@ -4,8 +4,8 @@
 const { kde, tok } = require('./diagramy');
 const { kviz, KVIZ_CSS, KVIZ_JS } = require('./kviz');
 
-const VERZE = '1.0';
-const DATUM = '26.&nbsp;10.&nbsp;2026';
+const VERZE = '1.1';
+const DATUM = '27.&nbsp;10.&nbsp;2026';
 
 const sticky = [
   { href: '#co-plati', label: 'Co platí a od kdy', n: '01' },
@@ -29,6 +29,11 @@ const extraCss = `
   td.ne { color: var(--ok); }
   td.cast { color: var(--warn); }
   @media print { figure.dg { break-inside: avoid; } figure.dg svg { border: 0; padding: 0; } }
+  /* dlaždice klíčového závěru: bílé na černém, ne černé na černém (Hana 27. 10. 2026) */
+  .keytiles .kt { background: #fff; border-color: #fff; }
+  .keytiles .kt b { color: var(--ink); }
+  .keytiles .kt span { color: var(--ink-2); }
+  @media print { .keytiles .kt { border: 1px solid var(--line); } }
 </style>`;
 
 const body = `
@@ -169,7 +174,7 @@ ${kviz({
       <tr><th scope="row">Osobní odběr na&nbsp;prodejně, platba hotově</th><td class="ano">Ano</td><td>Hotovost se&nbsp;eviduje vždy (§&nbsp;6 odst.&nbsp;2).</td></tr>
       <tr><th scope="row">Osobní odběr, platba kartou na&nbsp;terminálu</th><td class="ano">Ano</td><td>Kontaktní platba v&nbsp;provozovně. Eviduje se&nbsp;částka skutečně stržená z&nbsp;karty.</td></tr>
       <tr><th scope="row">QR kód nebo převod zadaný na&nbsp;prodejně při převzetí</th><td class="ano">Ano</td><td>Platba je součástí prodeje na&nbsp;místě. Faktura se&nbsp;splatností, kterou zákazník náhodou zaplatí z&nbsp;mobilu v&nbsp;prodejně, se&nbsp;neeviduje.</td></tr>
-      <tr><th scope="row">Dobírka vybraná dopravcem z&nbsp;evidence poštovních operátorů, hotově nebo kartou kurýrovi</th><td class="ne">Ne</td><td>Výjimka pro&nbsp;poštovní službu (§&nbsp;6 odst.&nbsp;2). Peníze přijdou e-shopu převodem. Dopravce dobírku neeviduje také, není to jeho příjem. Evidenci poštovních operátorů vede Český telekomunikační úřad.</td></tr>
+      <tr><th scope="row">Dobírka vybraná dopravcem z&nbsp;evidence poštovních operátorů, hotově nebo kartou kurýrovi</th><td class="ne">Ne</td><td>Výjimka pro&nbsp;poštovní službu (§&nbsp;6 odst.&nbsp;2). Peníze přijdou e-shopu převodem. Dopravce ji neeviduje také, protože to není jeho příjem. Evidenci poštovních operátorů vede Český telekomunikační úřad.</td></tr>
       <tr><th scope="row">Dobírka vybraná vlastním kurýrem e-shopu</th><td class="ano">Ano</td><td>Osobní kontakt s&nbsp;personálem a&nbsp;dopravní prostředek podnikatele. Hotovost i&nbsp;karta na&nbsp;mobilním terminálu. Vozidlo e-shopu je evidenční jednotka.</td></tr>
       <tr><th scope="row">Výdejní místo nebo box třetí strany, platba tam</th><td class="ne">Ne</td><td>Platbu přijímá provozovatel výdejních míst a&nbsp;e-shopu ji posílá převodem. Závěr je odvozený ze&nbsp;zákona, oficiální příklad zatím chybí.</td></tr>
       <tr><th scope="row">Dárkový poukaz koupený online, uplatněný na&nbsp;prodejně</th><td class="cast">Záleží</td><td>Poukaz na&nbsp;konkrétní zboží nebo službu: nic se&nbsp;neeviduje, nákup proběhl na&nbsp;dálku. Hodnotový poukaz nebo kredit: čerpání na&nbsp;prodejně se&nbsp;eviduje jako kontaktní platba (§&nbsp;4 odst.&nbsp;2).</td></tr>
