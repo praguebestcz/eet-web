@@ -38,7 +38,7 @@ const body = `
 </div>
 
 <header class="doc-header" data-review-id="header">
-  <h1>Evidence tržeb <span class="accent">EET&nbsp;2.0</span> od&nbsp;1.&nbsp;1.&nbsp;2027</h1>
+  <h1>EET&nbsp;2.0 od&nbsp;1.&nbsp;1.&nbsp;2027 <span class="accent">jen&nbsp;pro&nbsp;platby na&nbsp;místě</span></h1>
   <p class="subtitle">Zákon č.&nbsp;180/2026&nbsp;Sb. vrací evidenci tržeb. Platby přes e-shop se&nbsp;neevidují, platby při osobním převzetí ano.<br>Co to znamená pro&nbsp;váš e-shop, co se&nbsp;posílá Finanční správě a&nbsp;jak se&nbsp;připravit.</p>
   <div class="meta-row">
     <span class="pill">Platí od&nbsp;1.&nbsp;1.&nbsp;2027</span>
@@ -56,8 +56,8 @@ const body = `
 <div class="keybox" data-review-id="keybox">
   <span class="label">Klíčový závěr</span>
   <div class="keytiles" data-review-id="keytiles">
-    <div class="kt"><b>Od&nbsp;1.&nbsp;1.&nbsp;2027</b><span>pro&nbsp;všechny najednou, bez&nbsp;náběhu po&nbsp;oborech</span></div>
     <div class="kt"><b>Jen platby na&nbsp;místě</b><span>hotovost a&nbsp;kontaktní platby podle §&nbsp;5 a&nbsp;6</span></div>
+    <div class="kt"><b>Od&nbsp;1.&nbsp;1.&nbsp;2027</b><span>pro&nbsp;všechny najednou, bez&nbsp;náběhu po&nbsp;oborech</span></div>
     <div class="kt"><b>Online platby ne</b><span>karta, převod i&nbsp;QR kód z&nbsp;webu jsou mimo evidenci</span></div>
     <div class="kt"><b>Až&nbsp;500&nbsp;000&nbsp;Kč</b><span>horní hranice pokuty, dozor Finanční správa</span></div>
   </div>
@@ -88,7 +88,7 @@ const body = `
 <section id="co-plati" data-review-id="section-co-plati">
   <span class="section-label">01 - Termíny</span>
   <h2>Co platí <span class="accent">a&nbsp;od&nbsp;kdy</span></h2>
-  <p class="lead">Zákon č.&nbsp;180/2026&nbsp;Sb., o&nbsp;evidenci tržeb, schválila Sněmovna 9.&nbsp;9.&nbsp;2026 a&nbsp;ve&nbsp;Sbírce zákonů vyšel 7.&nbsp;10.&nbsp;2026. Evidence začíná <strong>1.&nbsp;ledna 2027 pro&nbsp;všechny povinné najednou</strong>. Na&nbsp;rozdíl od&nbsp;původní EET z&nbsp;roku 2016 nemá zákon náběh po&nbsp;oborech ani limit obratu.</p>
+  <p class="lead">Zákon č.&nbsp;180/2026&nbsp;Sb., o&nbsp;evidenci tržeb, schválila Sněmovna 9.&nbsp;9.&nbsp;2026 a&nbsp;ve&nbsp;Sbírce zákonů vyšel 7.&nbsp;10.&nbsp;2026. Evidence začíná <strong>1.&nbsp;ledna 2027 pro&nbsp;všechny povinné najednou</strong> a&nbsp;týká se&nbsp;jen plateb na&nbsp;místě. Na&nbsp;rozdíl od&nbsp;původní EET z&nbsp;roku 2016 nemá zákon náběh po&nbsp;oborech ani limit obratu.</p>
   <div class="cols2">
     <div class="card" data-review-id="karta-kdo">
       <span class="tag">Kdo je povinný</span>
@@ -302,8 +302,8 @@ ${kviz({
 module.exports = {
   file: 'index.html',
   base: '',
-  title: 'EET 2.0 od 1. 1. 2027: co se mění pro e-shopy | PragueBest',
-  description: 'Zákon č. 180/2026 Sb. vrací evidenci tržeb od 1. 1. 2027. Platby přes e-shop se neevidují, platby při osobním převzetí ano. Patnáct situací z e-shopů, co pokladna posílá a jak se připravit.',
+  title: 'EET 2.0 od 1. 1. 2027 jen pro platby na místě | PragueBest',
+  description: 'Zákon č. 180/2026 Sb. vrací evidenci tržeb od 1. 1. 2027, ale jen pro platby na místě. Platby přes e-shop se neevidují, platby při osobním převzetí ano. Patnáct situací z e-shopů, co pokladna posílá a jak se připravit.',
   stickyTitle: 'EET 2.0 pro e-shopy',
   sticky,
   body,
