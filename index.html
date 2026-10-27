@@ -349,11 +349,14 @@
   td.ne { color: var(--ok); }
   td.cast { color: var(--warn); }
   @media print { figure.dg { break-inside: avoid; } figure.dg svg { border: 0; padding: 0; } }
-  /* dlaždice klíčového závěru: bílé na černém, ne černé na černém (Hana 27. 10. 2026) */
-  .keytiles .kt { background: #fff; border-color: #fff; }
-  .keytiles .kt b { color: var(--ink); }
-  .keytiles .kt span { color: var(--ink-2); }
-  @media print { .keytiles .kt { border: 1px solid var(--line); } }
+  /* klíčové údaje bez rámečků: řádek oddělený linkami (Hana 27. 10. 2026, verze 3) */
+  .keytiles { gap: 0; margin: 14px 0 22px; border-top: 1px solid rgba(255,255,255,.2); border-bottom: 1px solid rgba(255,255,255,.2); }
+  .keytiles .kt { background: transparent; border: 0; border-left: 1px solid rgba(255,255,255,.2); border-radius: 0; padding: 16px 20px; }
+  .keytiles .kt:first-child { border-left: 0; padding-left: 0; }
+  .keytiles .kt b { color: #fff; font-size: 18px; letter-spacing: -0.01em; margin-bottom: 5px; }
+  .keytiles .kt span { color: rgba(255,255,255,.72); font-size: 13px; }
+  @media (max-width: 720px) { .keytiles { grid-template-columns: 1fr; } .keytiles .kt { border-left: 0; padding: 12px 0; border-top: 1px solid rgba(255,255,255,.2); } .keytiles .kt:first-child { border-top: 0; } }
+  @media print { .keytiles .kt { border-color: rgba(255,255,255,.4); } }
 </style>
 <style>
   .kviz { background: #fff; border: 1px solid var(--line); border-radius: 16px; max-width: 1000px; margin: 22px 0; }
