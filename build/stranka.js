@@ -100,8 +100,8 @@ const body = `
     </div>
     <div class="card" data-review-id="karta-nove">
       <span class="tag neutral">Co je jinak než v&nbsp;EET&nbsp;1.0</span>
-      <h3>Rozhoduje kontakt, ne&nbsp;hotovost</h3>
-      <p>Původní zákon rozlišoval hotovost a&nbsp;bezhotovostní platby. Nový zákon rozlišuje platbu na&nbsp;místě a&nbsp;platbu na&nbsp;dálku, a&nbsp;to bez&nbsp;ohledu na&nbsp;způsob úhrady.</p>
+      <h3>Rozhoduje místo platby, ne&nbsp;způsob úhrady</h3>
+      <p>Původní zákon rozlišoval hotovost a&nbsp;bezhotovostní platby. Nový zákon rozlišuje platbu na&nbsp;místě a&nbsp;platbu na&nbsp;dálku.</p>
     </div>
   </div>
   <div class="table-wrap" data-review-id="tabulka-terminy">
@@ -109,7 +109,7 @@ const body = `
     <caption>Klíčová data</caption>
     <thead><tr><th>Datum</th><th>Co se&nbsp;děje</th></tr></thead>
     <tbody>
-      <tr><td><strong>7.&nbsp;10.&nbsp;2026</strong></td><td>Zákon vyhlášen ve&nbsp;Sbírce zákonů (částka 180).</td></tr>
+      <tr><td><strong>7.&nbsp;10.&nbsp;2026</strong></td><td>Zákon vyhlášen ve&nbsp;Sbírce zákonů.</td></tr>
       <tr><td><strong>1.&nbsp;11.&nbsp;2026</strong></td><td>Na&nbsp;portálu MOJE daně (DIS+) jde přihlásit se&nbsp;k&nbsp;EET, oznámit evidenční jednotky a&nbsp;vygenerovat pokladní certifikát. Produkční rozhraní běží v&nbsp;ověřovacím režimu.</td></tr>
       <tr><td><strong>1.&nbsp;12.&nbsp;2026</strong></td><td>Finanční správa spouští bezplatnou webovou pokladnu MOJE eet.</td></tr>
       <tr><td><strong>1.&nbsp;1.&nbsp;2027</strong></td><td>Účinnost zákona, začátek evidence. Leden Finanční správa označuje za&nbsp;pilotní režim s&nbsp;důrazem na&nbsp;metodickou podporu. Jde ale o&nbsp;standardní evidenci, ne&nbsp;o&nbsp;odklad.</td></tr>
@@ -165,7 +165,7 @@ ${kviz({
   <table>
     <thead><tr><th>Situace</th><th>Eviduje se?</th><th>Proč</th></tr></thead>
     <tbody>
-      <tr><th scope="row">Platba kartou v&nbsp;platební bráně e-shopu</th><td class="ne">Ne</td><td>Platba na&nbsp;dálku, bez&nbsp;osobního kontaktu a&nbsp;mimo provozovnu. Důvodová zpráva: na&nbsp;e-shopy s&nbsp;bezkontaktní platbou se&nbsp;povinnost nevztahuje.</td></tr>
+      <tr><th scope="row">Platba kartou v&nbsp;platební bráně e-shopu</th><td class="ne">Ne</td><td>Platba na&nbsp;dálku, mimo provozovnu. Důvodová zpráva výslovně říká, že na&nbsp;e-shopy s&nbsp;platbou bez&nbsp;osobního kontaktu se&nbsp;povinnost nevztahuje.</td></tr>
       <tr><th scope="row">Bankovní převod předem podle objednávky</th><td class="ne">Ne</td><td>Zákazník platí z&nbsp;domova nebo kanceláře. Totéž platí pro&nbsp;fakturu se&nbsp;splatností.</td></tr>
       <tr><th scope="row">QR kód na&nbsp;webu nebo v&nbsp;e-mailu</th><td class="ne">Ne</td><td>Finanční správa ho uvádí výslovně jako platbu na&nbsp;dálku.</td></tr>
       <tr><th scope="row">Zaplaceno předem online, vyzvednuto na&nbsp;prodejně</th><td class="ne">Ne</td><td>Vyzvednutí není platba. Pozor na&nbsp;výjimku: pokud brána částku jen zablokuje a&nbsp;strhne ji až&nbsp;při převzetí, jde podle důvodové zprávy o&nbsp;kontaktní platbu.</td></tr>
